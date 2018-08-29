@@ -45,7 +45,7 @@ class BackpackTest < MiniTest::Test
 
   ###### TESTS ABOUT GYM SHOES... wait, where are the tests about gym shoes? #####
   # is something missing here?
-  
+
   def test_shoes_needed
     ['monday', 'thursday'].each do |day|
       backpack = build(:backpack, day_of_week: day)
@@ -73,7 +73,7 @@ Day: monday, Weather: sunny
 - shirt
 - gym shoes
 - packed lunch"
-    assert_equal(expected, backpack.my_func)
+    assert_equal(expected, backpack.packing_list)
   end
 
 end
