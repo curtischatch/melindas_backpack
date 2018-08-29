@@ -45,6 +45,21 @@ class BackpackTest < MiniTest::Test
 
   ###### TESTS ABOUT GYM SHOES... wait, where are the tests about gym shoes? #####
   # is something missing here?
+  
+  def test_shoes_needed
+    ['monday', 'thursday'].each do |day|
+      backpack = build(:backpack, day_of_week: day)
+      assert(backpack.items.include?('gym shoes'))
+    end
+  end
+
+  def test_shoes_not_needed
+    ['tuesday', 'wednesday', 'friday', 'saturday', 'sunday'].each do |day|
+      backpack = build(:backpack, day_of_week: day)
+      refute(backpack.items.include?('gym shoes'))
+    end
+  end
+
 
 
   ##### TESTS ABOUT PRINTING THE LIST #####
